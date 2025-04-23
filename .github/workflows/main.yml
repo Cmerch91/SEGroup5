@@ -11,36 +11,37 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: 🧾 Checkout code
+    - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: 🐘 Install SQL Server
+    - name: Install SQL Server
       uses: potatoqualitee/mssqlsuite@v1.7
       with:
         install: sqlengine, sqlpackage
 
-    - name: 🧪 Setup test database
+    - name: Setup test database
       run: |
         sqlcmd -S localhost -U sa -P dbatools.I0 -Q "CREATE DATABASE TestDb;"
         sqlcmd -S localhost -U sa -P dbatools.I0 -d TestDb -Q "SELECT @@version;"
 
-    - name: 🛠️ Setup .NET SDK
+    - name: Setup .NET SDK
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
 
-    - name: 📦 Restore MAUI workloads
-      run: dotnet workload restore ./SEGroup5/SEGroup5.csproj
+    - name: Build MAUI project (all platforms)
+      run: dotnet build ./SEGroup5/SEGroup5.csproj --configuration Release --no-restore
 
-    - name: 📥 Restore dependencies
+
+    - name: Restore dependencies
       run: dotnet restore ./SEGroup5/SEGroup5.csproj
 
-    - name: 🏗️ Build project
+    - name:  Build project
       env:
         ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
       run: dotnet build ./SEGroup5/SEGroup5.csproj --framework net8.0 --configuration Release --no-restore
 
-    - name: ✅ Run tests
+    - name: Run tests
       env:
         ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
       run: dotnet test ./SEGroup5.sln --framework net8.0 --no-build
