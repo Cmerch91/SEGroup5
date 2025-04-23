@@ -1,6 +1,6 @@
 using Microsoft.Data.SqlClient;
 
-public class SqlService
+public class SQLConnection
 {
     private readonly string _connectionString = "Server=localhost;Database=CourseWork5;User Id=Cmerch;Password=MyStrong!Pass123;TrustServerCertificate=True;";
 

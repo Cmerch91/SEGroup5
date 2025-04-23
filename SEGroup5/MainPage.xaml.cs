@@ -11,9 +11,9 @@ public partial class MainPage : ContentPage
 	}
 
 
-private async void OnNavigateToReadingsPageClicked(object sender, EventArgs e)
+private async void OnNavigateToMenuPage(object sender, EventArgs e)
 {
-    await Navigation.PushAsync(new Readings());
+    await Navigation.PushAsync(new Menu());
 }
 
 

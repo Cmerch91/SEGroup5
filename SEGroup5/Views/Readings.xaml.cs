@@ -13,7 +13,7 @@ public partial class Readings : ContentPage
     {
         base.OnAppearing();
 
-        var service = new SqlService();
+        var service = new SQLConnection();
         var noonReadings = await service.GetNoonReadingsAsync();
         ReadingsView.ItemsSource = noonReadings;
     }
