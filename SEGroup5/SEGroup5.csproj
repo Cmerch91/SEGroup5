@@ -63,4 +63,8 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Include=".github\workflows\build-and-test.yml" />
+	</ItemGroup>
+
 </Project>
