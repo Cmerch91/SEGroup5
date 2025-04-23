@@ -24,24 +24,23 @@ jobs:
         sqlcmd -S localhost -U sa -P dbatools.I0 -Q "CREATE DATABASE TestDb;"
         sqlcmd -S localhost -U sa -P dbatools.I0 -d TestDb -Q "SELECT @@version;"
 
-    - name: Setup .NET SDK
+    - name: Setup .NET 8 SDK
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
 
-    - name: Build MAUI project (all platforms)
-      run: dotnet build ./SEGroup5/SEGroup5.csproj --configuration Release --no-restore
+    - name: Restore MAUI workloads
+      run: dotnet workload restore ./SEGroup5/SEGroup5.csproj
 
-
-    - name: Restore dependencies
+    - name: Restore NuGet dependencies
       run: dotnet restore ./SEGroup5/SEGroup5.csproj
 
-    - name:  Build project
+    - name: Build MAUI project (multi-target)
       env:
         ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
-      run: dotnet build ./SEGroup5/SEGroup5.csproj --framework net8.0 --configuration Release --no-restore
+      run: dotnet build ./SEGroup5/SEGroup5.csproj --configuration Release
 
-    - name: Run tests
+    - name: Run unit tests
       env:
         ConnectionStrings__TestConnection: ${{ secrets.TestConnection_CONNECTION_STRING }}
-      run: dotnet test ./SEGroup5.sln --framework net8.0 --no-build
+      run: dotnet test ./SEGroup5.sln --no-build
