@@ -14,4 +14,8 @@ public partial class DataMenuPage : ContentPage
 	{
     await Navigation.PushAsync(new WaterQualityPage());
 	}
+	private async void OnNavigateToWeatherPage(object sender, EventArgs e)
+	{
+    await Navigation.PushAsync(new WeatherPage());
+	}
 }

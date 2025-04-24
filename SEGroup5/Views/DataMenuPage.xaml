@@ -19,6 +19,9 @@
         <Button 
             Text="Water Quality"
             Clicked="OnNavigateToWaterQualityPage" />
+        <Button 
+            Text="Weather"
+            Clicked="OnNavigateToWeatherPage" />
 
             </StackLayout>
     </VerticalStackLayout>
