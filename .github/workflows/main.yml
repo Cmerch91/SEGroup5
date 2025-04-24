@@ -3,8 +3,8 @@ name: Build & Test Workflow
 on:
   push:
     branches:
-      - main
-      - '**'  # Optional: triggers on all branches
+      - master
+      - '**'
 
 jobs:
   build:
