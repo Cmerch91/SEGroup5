@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SEGroup5.Menu">
     <VerticalStackLayout>
+                <StackLayout Padding="20" Spacing="20">
         <Label 
             Text="Menu" 
             FontSize="32" 
@@ -11,5 +12,10 @@
             Text="Display Data"
             Clicked="OnNavigateToDataMenu"
         />
+        <Button 
+            Text="Monitor Sensors"
+            Clicked="OnNavigateToMonitorPage"
+        />
+        </StackLayout>
     </VerticalStackLayout>
 </ContentPage>

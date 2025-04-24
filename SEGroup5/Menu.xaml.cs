@@ -14,4 +14,8 @@ public partial class Menu : ContentPage
 {
     await Navigation.PushAsync(new DataMenuPage());
 }
+	private async void OnNavigateToMonitorPage(object sender, EventArgs e)
+{
+    await Navigation.PushAsync(new MonitorMenuPage());
+}
 }
