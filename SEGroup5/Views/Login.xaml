@@ -4,13 +4,22 @@
              x:Class="SEGroup5.Views.Login"
              Title="Login">
     <VerticalStackLayout Padding="20" Spacing="20">
-        <Label Text="Login at 12:00 PM" FontSize="20" FontAttributes="Bold" />
-        <CollectionView x:Name="LoginView">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Label Text="{Binding .}" />
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        <Editor x:Name="Email"
+                        Placeholder="Enter your userID"
+                        HeightRequest="10"/>
+        <Editor x:Name="Password"
+                        Placeholder="Enter your password"
+                        HeightRequest="10"/>
+
+                <Grid ColumnDefinitions="*,*"
+                                ColumnSpacing="4">
+                        <Button Text="Save"
+                                Command="{Binding SaveCommand}"/>
+
+                        <Button Grid.Column="1"
+                                Text="Delete"
+                                Command="{Binding DeleteCommand}"/>
+
+                </Grid>
     </VerticalStackLayout>
 </ContentPage>

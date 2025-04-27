@@ -15,8 +15,8 @@ public partial class Menu : ContentPage
     await Navigation.PushAsync(new Readings());
 }
 
-private async void OnNavigateToLoginPage(object sender, EventArgs e)
+private async void OnNavigateToAdminPage(object sender, EventArgs e)
 {
-    await Navigation.PushAsync(new Login());
+    await Navigation.PushAsync(new Admin());
 }
 }

@@ -33,4 +33,74 @@ public class SQLConnection
 
         return results;
     }
+
+    public async Task<List<string>> GetAllFromRoles(){
+
+        var results = new List<string>();
+
+        using var connection = new SqlConnection(_connectionString);
+        await connection.OpenAsync();
+
+        var command = new SqlCommand(@"
+            SELECT * FROM Roles;", connection);
+
+        using var reader = await command.ExecuteReaderAsync();
+        while (await reader.ReadAsync())
+        {
+            var name = reader[0].ToString();
+
+            results.Add($"{name}");
+        }
+
+        return results;
+
+    }
+
+    public async Task<List<string>> GetAllFromUsers(){
+
+        var results = new List<string>();
+
+        using var connection = new SqlConnection(_connectionString);
+        await connection.OpenAsync();
+
+        var command = new SqlCommand(@"
+            SELECT * FROM Users;", connection);
+
+        using var reader = await command.ExecuteReaderAsync();
+        while (await reader.ReadAsync())
+        {
+            var id = reader[0].ToString();
+            var role = reader[1].ToString();
+            var firstname = reader[2].ToString();
+            var lastname = reader[3].ToString();
+            var email = reader[4].ToString();
+            var password = reader[5].ToString();
+
+            results.Add($"{id}, {role}, {firstname}, {lastname}, {email}, {password}");
+        }
+
+        return results;
+
+    }
+
+    public async Task<bool> CheckLogin(string id, string password)
+    {
+        var results = new List<string>();
+
+        using var connection = new SqlConnection(_connectionString);
+        await connection.OpenAsync();
+
+        var command = new SqlCommand(@"
+            SELECT * FROM Users
+            WHERE UserID='" + id + "' AND password='" + password + "';", connection);
+
+        using var reader = await command.ExecuteReaderAsync();
+        bool found = false;
+        while (await reader.ReadAsync())
+        {
+            found = true;
+        }
+
+        return found;
+    }
 }

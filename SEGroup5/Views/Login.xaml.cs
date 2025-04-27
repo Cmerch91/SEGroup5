@@ -8,4 +8,12 @@ public partial class Login : ContentPage
     {
         InitializeComponent();
     }
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+
+        var service = new SQLConnection();
+    }
+
 }

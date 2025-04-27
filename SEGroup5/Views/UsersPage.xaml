@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SEGroup5.Views.UsersPage"
+             Title="UsersPage">
+    <VerticalStackLayout Padding="20" Spacing="20">
+        <Label Text="Users:" FontSize="20" FontAttributes="Bold" />
+        <CollectionView x:Name="Users">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding .}" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button 
+        Padding="20"
+        Text="Back"
+        Clicked="OnNavigateBack"
+        />
+    </VerticalStackLayout>
+</ContentPage>

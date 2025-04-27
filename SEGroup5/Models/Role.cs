@@ -7,5 +7,5 @@ namespace SEGroup5.Models;
 [Table("Roles")]
 public class Role
 {
-    public string RoleName { get; set; } = ""; //Name of the role -> String
+    public string RoleName { get; set; } = ""; //Name of the role
 }

@@ -9,9 +9,10 @@ namespace SEGroup5.Models;
 [Table("Users")]
 public class User
 {
-    public string UserID { get; set; } = ""; //ID uniqly representing the User --> String
-    public string Firstname { get; set; } = ""; //User's firstname --> String
-    public string Lastname { get; set; } = ""; //User's lastname --> String
-    public string Email { get; set; } = ""; //User's email --> String
-    public string UserRole { get; set; } = ""; //The role of the user --> String
+    public string UserID { get; set; } = ""; //ID uniqly representing the User
+    public string UserRole { get; set; } = ""; //The role of the user
+    public string Firstname { get; set; } = ""; //User's firstname
+    public string Lastname { get; set; } = ""; //User's lastname
+    public string Email { get; set; } = ""; //User's email
+    public string Password {get; set; } = ""; //The password of the user
 }
