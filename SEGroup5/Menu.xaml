@@ -8,5 +8,10 @@
     Text="Check Noon Readings"
     Clicked="OnNavigateToReadingsPage"
 />
+<Button 
+    Padding="20"
+    Text="Manage Users and Roles"
+    Clicked="OnNavigateToLoginPage"
+/>
     </VerticalStackLayout>
 </ContentPage>
