@@ -1,81 +1,97 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SEGroup5.Views.AirMonitorPage">
+             x:Class="SEGroup5.Views.WaterMonitorPage">
 
     <ScrollView>
         <StackLayout Padding="20" Spacing="20">
 
-            <Label Text="Air Sensor Monitor" FontSize="28" HorizontalOptions="Center" />
+            <Label Text="Water Sensor Monitor" FontSize="28" HorizontalOptions="Center" />
 
-            <Label Text="{Binding AirName}" FontSize="20" FontAttributes="Bold" />
+            <Label Text="{Binding WaterName}" FontSize="20" FontAttributes="Bold" />
 
             <HorizontalStackLayout Spacing="10">
                 <Label Text="Status: " FontAttributes="Bold" />
-                <Label Text="{Binding AirStatus}" />
+                <Label Text="{Binding WaterStatus}" />
             </HorizontalStackLayout>
 
             <VerticalStackLayout Spacing="5">
-                <Label Text="{Binding AirQuantity}" FontAttributes="Bold" />
+                <Label Text="{Binding WaterQuantity}" FontAttributes="Bold" />
                 <HorizontalStackLayout>
                     <Label Text="Unit: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirUnit}" />
+                    <Label Text="{Binding WaterUnit}" />
                 </HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Label Text="Frequency: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirFrequency}" />
+                    <Label Text="{Binding WaterFrequency}" />
                 </HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Label Text="Safe Level: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirSafeLevel}" />
+                    <Label Text="{Binding WaterSafeLevel}" />
                 </HorizontalStackLayout>
             </VerticalStackLayout>
 
             <VerticalStackLayout Spacing="5">
-                <Label Text="{Binding AirQuantity2}" FontAttributes="Bold" />
+                <Label Text="{Binding WaterQuantity2}" FontAttributes="Bold" />
                 <HorizontalStackLayout>
                     <Label Text="Unit: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirUnit2}" />
+                    <Label Text="{Binding WaterUnit2}" />
                 </HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Label Text="Frequency: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirFrequency2}" />
+                    <Label Text="{Binding WaterFrequency2}" />
                 </HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Label Text="Safe Level: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirSafeLevel2}" />
+                    <Label Text="{Binding WaterSafeLevel2}" />
                 </HorizontalStackLayout>
             </VerticalStackLayout>
 
             <VerticalStackLayout Spacing="5">
-                <Label Text="{Binding AirQuantity3}" FontAttributes="Bold" />
+                <Label Text="{Binding WaterQuantity3}" FontAttributes="Bold" />
                 <HorizontalStackLayout>
                     <Label Text="Unit: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirUnit3}" />
+                    <Label Text="{Binding WaterUnit3}" />
                 </HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Label Text="Frequency: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirFrequency3}" />
+                    <Label Text="{Binding WaterFrequency3}" />
                 </HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Label Text="Safe Level: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirSafeLevel3}" />
+                    <Label Text="{Binding WaterSafeLevel3}" />
                 </HorizontalStackLayout>
             </VerticalStackLayout>
 
             <VerticalStackLayout Spacing="5">
-                <Label Text="{Binding AirQuantity4}" FontAttributes="Bold" />
+                <Label Text="{Binding WaterQuantity4}" FontAttributes="Bold" />
                 <HorizontalStackLayout>
                     <Label Text="Unit: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirUnit4}" />
+                    <Label Text="{Binding WaterUnit4}" />
                 </HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Label Text="Frequency: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirFrequency4}" />
+                    <Label Text="{Binding WaterFrequency4}" />
                 </HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Label Text="Safe Level: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirSafeLevel4}" />
+                    <Label Text="{Binding WaterSafeLevel4}" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="{Binding WaterQuantity5}" FontAttributes="Bold" />
+                <HorizontalStackLayout>
+                    <Label Text="Unit: " FontAttributes="Bold" />
+                    <Label Text="{Binding WaterUnit5}" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Frequency: " FontAttributes="Bold" />
+                    <Label Text="{Binding WaterFrequency5}" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Safe Level: " FontAttributes="Bold" />
+                    <Label Text="{Binding WaterSafeLevel5}" />
                 </HorizontalStackLayout>
             </VerticalStackLayout>
 

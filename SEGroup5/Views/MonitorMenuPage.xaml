@@ -15,8 +15,14 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Button 
-            Text="Air Quality"
+            Text="Air Sensor"
             Clicked="OnNavigateToAirMonitorPage" />
+        <Button 
+            Text="Water Sensor"
+            Clicked="OnNavigateToWaterMonitorPage" />
+        <Button 
+            Text="Weather Sensor"
+            Clicked="OnNavigateToWeatherMonitorPage" />
 
             </StackLayout>
     </VerticalStackLayout>

@@ -6,48 +6,80 @@ public static class SensorData
 {
     public static Sensor AirSensor { get; set; } = new Sensor
     {
-        Name = "Air Sensor",
-        Status = "Online",
-        Quantity = "Sulphur dioxide",
-        Unit = "ug/m3",
-        Frequency = "Hourly",
-        SafeLevel = 200,
+        AirName = "Air Sensor",
+        AirStatus = "Online",
 
-        Quantity2 = "Nitrogen Dioxide",
-        Unit2 = "ug/m3",
-        Frequency2 = "Hourly",
-        SafeLevel2 = 266, 
+        AirQuantity = "Sulphur dioxide",
+        AirUnit = "ug/m3",
+        AirFrequency = "Hourly",
+        AirSafeLevel = 200,
 
-        Quantity3 = "Particulate matter <= 2.5 microns in diameter",
-        Unit3 = "ug/m3",
-        Frequency3 = "Hourly",
-        SafeLevel3 = 35, 
+        AirQuantity2 = "Nitrogen Dioxide",
+        AirUnit2 = "ug/m3",
+        AirFrequency2 = "Hourly",
+        AirSafeLevel2 = 266,
 
-        Quantity4 = "Particulate matter <= 10 microns in diameter",
-        Unit4 = "ug/m3",
-        Frequency4 = "Hourly",
-        SafeLevel4 = 50, 
+        AirQuantity3 = "Particulate matter <= 2.5 microns in diameter",
+        AirUnit3 = "ug/m3",
+        AirFrequency3 = "Hourly",
+        AirSafeLevel3 = 35,
 
-
-
+        AirQuantity4 = "Particulate matter <= 10 microns in diameter",
+        AirUnit4 = "ug/m3",
+        AirFrequency4 = "Hourly",
+        AirSafeLevel4 = 50,
     };
 
     public static Sensor WaterSensor { get; set; } = new Sensor
     {
-        Name = "Water Sensor",
-        Quantity = "Nitrite",
-        Unit = "mg/l",
-        Frequency = "Hourly",
-        SafeLevel = 3, 
-        Status = "Online"
+        WaterName = "Water Sensor",
+        WaterStatus = "Online",
+
+        WaterQuantity = "Nitrite",
+        WaterUnit = "mg/l",
+        WaterFrequency = "Hourly",
+        WaterSafeLevel = 3,
+
+        WaterQuantity2 = "Nitrate",
+        WaterUnit2 = "mg/l",
+        WaterFrequency2 = "Hourly",
+        WaterSafeLevel2 = 50,
+
+        WaterQuantity3 = "Phosphate",
+        WaterUnit3 = "mg/l",
+        WaterFrequency3 = "Hourly",
+        WaterSafeLevel3 = 0.1,
+
+        WaterQuantity4 = "Escherichia coli",
+        WaterUnit4 = "cfu/100ml",
+        WaterFrequency4 = "Daily",
+        WaterSafeLevel4 = 500,
+
+        WaterQuantity5 = "Intestinal enterococci",
+        WaterUnit5 = "cfu/100ml",
+        WaterFrequency5 = "Hourly",
+        WaterSafeLevel5 = 185,
     };
 
-        public static Sensor WeatherSensor { get; set; } = new Sensor
+    public static Sensor WeatherSensor { get; set; } = new Sensor
     {
-        Name = "Weather Sensor",
-        Quantity = "Air Temperature",
-        Unit = "C",
-        Frequency = "Hourly", 
-        Status = "Online"
+        WeatherName = "Weather Sensor",
+        WeatherStatus = "Online",
+
+        WeatherQuantity = "Air Temperature",
+        WeatherUnit = "°C",
+        WeatherFrequency = "Hourly",
+
+        WeatherQuantity2 = "Humidity",
+        WeatherUnit2 = "%",
+        WeatherFrequency2 = "Hourly",
+
+        WeatherQuantity3 = "Wind Speed",
+        WeatherUnit3 = "m/s",
+        WeatherFrequency3 = "Hourly",
+
+        WeatherQuantity4 = "Wind Direction",
+        WeatherUnit4 = "degree",
+        WeatherFrequency4 = "Hourly",
     };
 }

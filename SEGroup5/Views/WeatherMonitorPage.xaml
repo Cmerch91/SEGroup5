@@ -1,81 +1,65 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SEGroup5.Views.AirMonitorPage">
+             x:Class="SEGroup5.Views.WeatherMonitorPage">
 
     <ScrollView>
         <StackLayout Padding="20" Spacing="20">
 
-            <Label Text="Air Sensor Monitor" FontSize="28" HorizontalOptions="Center" />
+            <Label Text="Weather Sensor Monitor" FontSize="28" HorizontalOptions="Center" />
 
-            <Label Text="{Binding AirName}" FontSize="20" FontAttributes="Bold" />
+            <Label Text="{Binding WeatherName}" FontSize="20" FontAttributes="Bold" />
 
             <HorizontalStackLayout Spacing="10">
                 <Label Text="Status: " FontAttributes="Bold" />
-                <Label Text="{Binding AirStatus}" />
+                <Label Text="{Binding WeatherStatus}" />
             </HorizontalStackLayout>
 
             <VerticalStackLayout Spacing="5">
-                <Label Text="{Binding AirQuantity}" FontAttributes="Bold" />
+                <Label Text="{Binding WeatherQuantity}" FontAttributes="Bold" />
                 <HorizontalStackLayout>
                     <Label Text="Unit: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirUnit}" />
+                    <Label Text="{Binding WeatherUnit}" />
                 </HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Label Text="Frequency: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirFrequency}" />
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text="Safe Level: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirSafeLevel}" />
+                    <Label Text="{Binding WeatherFrequency}" />
                 </HorizontalStackLayout>
             </VerticalStackLayout>
 
             <VerticalStackLayout Spacing="5">
-                <Label Text="{Binding AirQuantity2}" FontAttributes="Bold" />
+                <Label Text="{Binding WeatherQuantity2}" FontAttributes="Bold" />
                 <HorizontalStackLayout>
                     <Label Text="Unit: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirUnit2}" />
+                    <Label Text="{Binding WeatherUnit2}" />
                 </HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Label Text="Frequency: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirFrequency2}" />
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text="Safe Level: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirSafeLevel2}" />
+                    <Label Text="{Binding WeatherFrequency2}" />
                 </HorizontalStackLayout>
             </VerticalStackLayout>
 
             <VerticalStackLayout Spacing="5">
-                <Label Text="{Binding AirQuantity3}" FontAttributes="Bold" />
+                <Label Text="{Binding WeatherQuantity3}" FontAttributes="Bold" />
                 <HorizontalStackLayout>
                     <Label Text="Unit: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirUnit3}" />
+                    <Label Text="{Binding WeatherUnit3}" />
                 </HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Label Text="Frequency: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirFrequency3}" />
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text="Safe Level: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirSafeLevel3}" />
+                    <Label Text="{Binding WeatherFrequency3}" />
                 </HorizontalStackLayout>
             </VerticalStackLayout>
 
             <VerticalStackLayout Spacing="5">
-                <Label Text="{Binding AirQuantity4}" FontAttributes="Bold" />
+                <Label Text="{Binding WeatherQuantity4}" FontAttributes="Bold" />
                 <HorizontalStackLayout>
                     <Label Text="Unit: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirUnit4}" />
+                    <Label Text="{Binding WeatherUnit4}" />
                 </HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Label Text="Frequency: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirFrequency4}" />
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text="Safe Level: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirSafeLevel4}" />
+                    <Label Text="{Binding WeatherFrequency4}" />
                 </HorizontalStackLayout>
             </VerticalStackLayout>
 
