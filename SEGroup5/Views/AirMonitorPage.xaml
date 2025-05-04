@@ -8,76 +8,37 @@
 
             <Label Text="Air Sensor Monitor" FontSize="28" HorizontalOptions="Center" />
 
-            <Label Text="{Binding AirName}" FontSize="20" FontAttributes="Bold" />
+            <Label Text="{Binding Name}" FontSize="20" FontAttributes="Bold" />
 
             <HorizontalStackLayout Spacing="10">
                 <Label Text="Status: " FontAttributes="Bold" />
-                <Label Text="{Binding AirStatus}" />
+                <Label Text="{Binding Status}" />
             </HorizontalStackLayout>
 
-            <VerticalStackLayout Spacing="5">
-                <Label Text="{Binding AirQuantity}" FontAttributes="Bold" />
-                <HorizontalStackLayout>
-                    <Label Text="Unit: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirUnit}" />
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text="Frequency: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirFrequency}" />
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text="Safe Level: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirSafeLevel}" />
-                </HorizontalStackLayout>
-            </VerticalStackLayout>
+            <CollectionView ItemsSource="{Binding Readings}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Spacing="5" Padding="0,10">
+                            <Label Text="{Binding Quantity}" FontAttributes="Bold" />
 
-            <VerticalStackLayout Spacing="5">
-                <Label Text="{Binding AirQuantity2}" FontAttributes="Bold" />
-                <HorizontalStackLayout>
-                    <Label Text="Unit: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirUnit2}" />
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text="Frequency: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirFrequency2}" />
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text="Safe Level: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirSafeLevel2}" />
-                </HorizontalStackLayout>
-            </VerticalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label Text="Unit: " FontAttributes="Bold" />
+                                <Label Text="{Binding Unit}" />
+                            </HorizontalStackLayout>
 
-            <VerticalStackLayout Spacing="5">
-                <Label Text="{Binding AirQuantity3}" FontAttributes="Bold" />
-                <HorizontalStackLayout>
-                    <Label Text="Unit: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirUnit3}" />
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text="Frequency: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirFrequency3}" />
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text="Safe Level: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirSafeLevel3}" />
-                </HorizontalStackLayout>
-            </VerticalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label Text="Frequency: " FontAttributes="Bold" />
+                                <Label Text="{Binding Frequency}" />
+                            </HorizontalStackLayout>
 
-            <VerticalStackLayout Spacing="5">
-                <Label Text="{Binding AirQuantity4}" FontAttributes="Bold" />
-                <HorizontalStackLayout>
-                    <Label Text="Unit: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirUnit4}" />
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text="Frequency: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirFrequency4}" />
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text="Safe Level: " FontAttributes="Bold" />
-                    <Label Text="{Binding AirSafeLevel4}" />
-                </HorizontalStackLayout>
-            </VerticalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label Text="Safe Level: " FontAttributes="Bold" />
+                                <Label Text="{Binding SafeLevel}" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
         </StackLayout>
     </ScrollView>

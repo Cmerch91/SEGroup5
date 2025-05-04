@@ -1,77 +1,37 @@
 namespace SEGroup5.Models
+
+// <summary>
+// Sensor.cs
+// This file contains the Sensor, SensorGroup, and SensorReading classes, which represent the structure of sensor data in the application.
+// </summary>
 {
-    public class Sensor
+    public class SensorReading
+    // Represents a single sensor reading with its properties
+    // Each reading has a quantity, unit, frequency, and safe level
     {
-        // Air Sensor Properties
-        public string AirName { get; set; } = "";
-        public string AirStatus { get; set; } = "";
-        public string AirQuantity { get; set; } = "";
-        public string AirUnit { get; set; } = "";
-        public string AirFrequency { get; set; } = "";
-        public int AirSafeLevel { get; set; } = 50;
+        public string Quantity { get; set; } = "";
+        public string Unit { get; set; } = "";
+        public string Frequency { get; set; } = "";
+        public double? SafeLevel { get; set; }
+    }
 
-        public string AirQuantity2 { get; set; } = "";
-        public string AirUnit2 { get; set; } = "";
-        public string AirFrequency2 { get; set; } = "";
-        public int AirSafeLevel2 { get; set; }
+    public class SensorGroup
 
-        public string AirQuantity3 { get; set; } = "";
-        public string AirUnit3 { get; set; } = "";
-        public string AirFrequency3 { get; set; } = "";
-        public int AirSafeLevel3 { get; set; }
+    // Represents a group of sensors with its properties
+    // Each group has a name, status, and a list of sensor readings
+    // The status indicates whether the sensor is online or offline
+    {
+        public string Name { get; set; } = "";
+        public string Status { get; set; } = "";
+        public List<SensorReading> Readings { get; set; } = new();
+    }
 
-        public string AirQuantity4 { get; set; } = "";
-        public string AirUnit4 { get; set; } = "";
-        public string AirFrequency4 { get; set; } = "";
-        public int AirSafeLevel4 { get; set; }
-
-        // Water Sensor Properties
-
-        public string WaterName { get; set; } = "";
-        public string WaterStatus { get; set; } = "";
-        public string WaterQuantity { get; set; } = "";
-        public string WaterUnit { get; set; } = "";
-        public string WaterFrequency { get; set; } = "";
-        public int WaterSafeLevel { get; set; } = 50;
-
-        public string WaterQuantity2 { get; set; } = "";
-        public string WaterUnit2 { get; set; } = "";
-        public string WaterFrequency2 { get; set; } = "";
-        public int WaterSafeLevel2 { get; set; }
-
-        public string WaterQuantity3 { get; set; } = "";
-        public string WaterUnit3 { get; set; } = "";
-        public string WaterFrequency3 { get; set; } = "";
-        public double WaterSafeLevel3 { get; set; }
-
-        public string WaterQuantity4 { get; set; } = "";
-        public string WaterUnit4 { get; set; } = "";
-        public string WaterFrequency4 { get; set; } = "";
-        public int WaterSafeLevel4 { get; set; }
-
-        public string WaterQuantity5 { get; set; } = "";
-        public string WaterUnit5 { get; set; } = "";
-        public string WaterFrequency5 { get; set; } = "";
-        public int WaterSafeLevel5 { get; set; }
-
-        // Weather Sensor Properties
-
-        public string WeatherName { get; set; } = "";
-        public string WeatherStatus { get; set; } = "";
-        public string WeatherQuantity { get; set; } = "";
-        public string WeatherUnit { get; set; } = "";
-        public string WeatherFrequency { get; set; } = "";
-
-        public string WeatherQuantity2 { get; set; } = "";
-        public string WeatherUnit2 { get; set; } = "";
-        public string WeatherFrequency2 { get; set; } = "";
-
-        public string WeatherQuantity3 { get; set; } = "";
-        public string WeatherUnit3 { get; set; } = "";
-        public string WeatherFrequency3 { get; set; } = "";
-
-        public string WeatherQuantity4 { get; set; } = "";
-        public string WeatherUnit4 { get; set; } = "";
-        public string WeatherFrequency4 { get; set; } = "";
+    public class Sensor
+    // Represents the main sensor data structure
+    // It contains three groups of sensors: Air, Water, and Weather
+    {
+        public SensorGroup Air { get; set; } = new();
+        public SensorGroup Water { get; set; } = new();
+        public SensorGroup Weather { get; set; } = new();
     }
 }

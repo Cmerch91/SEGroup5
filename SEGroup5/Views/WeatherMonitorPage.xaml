@@ -8,60 +8,32 @@
 
             <Label Text="Weather Sensor Monitor" FontSize="28" HorizontalOptions="Center" />
 
-            <Label Text="{Binding WeatherName}" FontSize="20" FontAttributes="Bold" />
+            <Label Text="{Binding Name}" FontSize="20" FontAttributes="Bold" />
 
             <HorizontalStackLayout Spacing="10">
                 <Label Text="Status: " FontAttributes="Bold" />
-                <Label Text="{Binding WeatherStatus}" />
+                <Label Text="{Binding Status}" />
             </HorizontalStackLayout>
 
-            <VerticalStackLayout Spacing="5">
-                <Label Text="{Binding WeatherQuantity}" FontAttributes="Bold" />
-                <HorizontalStackLayout>
-                    <Label Text="Unit: " FontAttributes="Bold" />
-                    <Label Text="{Binding WeatherUnit}" />
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text="Frequency: " FontAttributes="Bold" />
-                    <Label Text="{Binding WeatherFrequency}" />
-                </HorizontalStackLayout>
-            </VerticalStackLayout>
+            <CollectionView ItemsSource="{Binding Readings}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Spacing="5" Padding="0,10">
+                            <Label Text="{Binding Quantity}" FontAttributes="Bold" />
 
-            <VerticalStackLayout Spacing="5">
-                <Label Text="{Binding WeatherQuantity2}" FontAttributes="Bold" />
-                <HorizontalStackLayout>
-                    <Label Text="Unit: " FontAttributes="Bold" />
-                    <Label Text="{Binding WeatherUnit2}" />
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text="Frequency: " FontAttributes="Bold" />
-                    <Label Text="{Binding WeatherFrequency2}" />
-                </HorizontalStackLayout>
-            </VerticalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label Text="Unit: " FontAttributes="Bold" />
+                                <Label Text="{Binding Unit}" />
+                            </HorizontalStackLayout>
 
-            <VerticalStackLayout Spacing="5">
-                <Label Text="{Binding WeatherQuantity3}" FontAttributes="Bold" />
-                <HorizontalStackLayout>
-                    <Label Text="Unit: " FontAttributes="Bold" />
-                    <Label Text="{Binding WeatherUnit3}" />
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text="Frequency: " FontAttributes="Bold" />
-                    <Label Text="{Binding WeatherFrequency3}" />
-                </HorizontalStackLayout>
-            </VerticalStackLayout>
-
-            <VerticalStackLayout Spacing="5">
-                <Label Text="{Binding WeatherQuantity4}" FontAttributes="Bold" />
-                <HorizontalStackLayout>
-                    <Label Text="Unit: " FontAttributes="Bold" />
-                    <Label Text="{Binding WeatherUnit4}" />
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text="Frequency: " FontAttributes="Bold" />
-                    <Label Text="{Binding WeatherFrequency4}" />
-                </HorizontalStackLayout>
-            </VerticalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label Text="Frequency: " FontAttributes="Bold" />
+                                <Label Text="{Binding Frequency}" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
         </StackLayout>
     </ScrollView>
