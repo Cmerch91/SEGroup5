@@ -1,26 +1,21 @@
-using Microsoft.Maui.Controls;
+using SEGroup5.ViewModels;
 
-namespace SEGroup5.Views;
-
-public partial class RolesPage : ContentPage
+namespace SEGroup5.Views
 {
-    public RolesPage()
+    public partial class RolesPage : ContentPage
     {
-        InitializeComponent();
+        // Constructor for RolesPage
+        // Initializes the page and sets the BindingContext to an instance of WaterQualityViewModel
+        // This allows the page to bind to properties and commands defined in the ViewModel
+        public RolesPage()
+        {
+            InitializeComponent();
+            BindingContext = new RolesPageViewModel();
+        }
+
+        private async void OnNavigateBack(object sender, EventArgs e)
+        {
+        await Navigation.PushAsync(new Admin());
+        }
     }
-
-    protected override async void OnAppearing()
-    {
-        base.OnAppearing();
-
-        var service = new SQLConnection();
-        var roles = await service.GetAllFromRoles();
-        Roles.ItemsSource = roles;
-    }
-
-    private async void OnNavigateBack(object sender, EventArgs e)
-    {
-    await Navigation.PushAsync(new Admin());
-    }
-
 }

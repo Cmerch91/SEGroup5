@@ -1,21 +1,58 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SEGroup5.Views.UsersPage"
-             Title="UsersPage">
-    <VerticalStackLayout Padding="20" Spacing="20">
-        <Label Text="Users:" FontSize="20" FontAttributes="Bold" />
-        <CollectionView x:Name="Users">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Label Text="{Binding .}" />
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-        <Button 
-        Padding="20"
-        Text="Back"
-        Clicked="OnNavigateBack"
-        />
-    </VerticalStackLayout>
+             xmlns:viewmodels="clr-namespace:SEGroup5.ViewModels"
+             x:Class="SEGroup5.Views.UsersPage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:UsersPageViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+
+            <Label Text="Roles:" FontSize="32" HorizontalOptions="Center" />
+            <Label Text="Roles:" FontSize="18" HorizontalOptions="Center" />
+
+            <Button Text="Load Users" Command="{Binding LoadUsersCommand}" />
+
+            <Grid ColumnSpacing="10" Padding="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="UserID" Grid.Column="0" FontAttributes="Bold" />
+                <Label Text="User Role" Grid.Column="1" FontAttributes="Bold" />
+                <Label Text="Firstname" Grid.Column="2" FontAttributes="Bold" />
+                <Label Text="Lastname" Grid.Column="3" FontAttributes="Bold" />
+                <Label Text="Email" Grid.Column="4" FontAttributes="Bold" />
+                <Label Text="Password" Grid.Column="5" FontAttributes="Bold" />
+            </Grid>
+
+            <CollectionView ItemsSource="{Binding Users}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10" ColumnSpacing="100">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding}" Grid.Column="0" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button 
+            Padding="20"
+            Text="Back"
+            Clicked="OnNavigateBack"
+            />
+
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:SEGroup5.ViewModels"
+             x:Class="SEGroup5.Views.RolePage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:RolePageViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add"
+                Command="{Binding AddCommand}"
+                IconImageSource="{FontImage Glyph='+', Color=Black, Size=22}"/>
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+
+            <Button 
+            Padding="20"
+            Text="Back"
+            Clicked="OnNavigateBack"
+            />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

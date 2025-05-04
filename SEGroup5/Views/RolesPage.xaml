@@ -1,21 +1,54 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SEGroup5.Views.RolesPage"
-             Title="RolesPage">
-    <VerticalStackLayout Padding="20" Spacing="20">
-        <Label Text="Roles:" FontSize="20" FontAttributes="Bold" />
-        <CollectionView x:Name="Roles">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Label Text="{Binding .}" />
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-        <Button 
-        Padding="20"
-        Text="Back"
-        Clicked="OnNavigateBack"
-        />
-    </VerticalStackLayout>
+             xmlns:viewmodels="clr-namespace:SEGroup5.ViewModels"
+             x:Class="SEGroup5.Views.RolesPage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:RolesPageViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add"
+                Command="{Binding AddRoleCommand}"
+                IconImageSource="{FontImage Glyph='+', Color=Black, Size=22}"/>
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+
+            <Label Text="Roles:" FontSize="32" HorizontalOptions="Center" />
+            <Label Text="Roles:" FontSize="18" HorizontalOptions="Center" />
+
+            <Button Text="Load Roles" Command="{Binding LoadRolesCommand}" />
+
+            <Grid ColumnSpacing="10" Padding="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="RoleName" Grid.Column="0" FontAttributes="Bold" />
+            </Grid>
+
+            <CollectionView ItemsSource="{Binding Roles}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10" ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding}" Grid.Column="0" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button 
+            Padding="20"
+            Text="Back"
+            Clicked="OnNavigateBack"
+            />
+
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
