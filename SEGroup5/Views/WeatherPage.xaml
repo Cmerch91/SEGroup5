@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:SEGroup5.ViewModels"
+             x:Class="SEGroup5.Views.WeatherPage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:WeatherViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+
+            <Label Text="Weather Data" FontSize="32" HorizontalOptions="Center" />
+            <Label Text="Select a date and time range to view weather data." FontSize="18" HorizontalOptions="Center" />
+
+            <Label Text="Start Date" />
+            <DatePicker Date="{Binding StartDate}"
+                        MinimumDate="2025-02-01"
+                        MaximumDate="2025-02-07" />
+
+            <Label Text="Start Time" />
+            <Picker ItemsSource="{Binding HourOptions}"
+                    SelectedItem="{Binding StartTime}"
+                    ItemDisplayBinding="{Binding}" />
+
+            <Label Text="End Date" />
+            <DatePicker Date="{Binding EndDate}"
+                        MinimumDate="2025-02-01"
+                        MaximumDate="2025-02-07" />
+
+            <Label Text="End Time" />
+            <Picker ItemsSource="{Binding HourOptions}"
+                    SelectedItem="{Binding EndTime}"
+                    ItemDisplayBinding="{Binding}" />
+
+            <Button Text="Load Range Readings" Command="{Binding LoadDataCommand}" />
+
+
+            <Grid ColumnSpacing="10" Padding="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Date" Grid.Column="0" FontAttributes="Bold" />
+                <Label Text="Time" Grid.Column="1" FontAttributes="Bold" />
+                <Label Text="Temperature_2m_C" Grid.Column="2" FontAttributes="Bold" />
+                <Label Text="Relative_Humidity_2m" Grid.Column="3" FontAttributes="Bold" />
+                <Label Text="Wind_Speed_10m_m_s" Grid.Column="4" FontAttributes="Bold" />
+                <Label Text="Wind_Direction_10m" Grid.Column="5" FontAttributes="Bold" />
+            </Grid>
+
+
+            <CollectionView ItemsSource="{Binding Readings}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10" ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding Date}" Grid.Column="0" />
+                            <Label Text="{Binding Time}" Grid.Column="1" />
+                            <Label Text="{Binding Temperature, StringFormat='{0:F2}'}" Grid.Column="2" />
+                            <Label Text="{Binding RelativeHumidity, StringFormat='{0:F0}'}" Grid.Column="3" />
+                            <Label Text="{Binding WindSpeed, StringFormat='{0:F2}'}" Grid.Column="4" />
+                            <Label Text="{Binding WindDirection, StringFormat='{0:F0}'}" Grid.Column="5" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

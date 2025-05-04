@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:SEGroup5.ViewModels"
+             x:Class="SEGroup5.Views.WaterQualityPage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:WaterQualityViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+
+            <Label Text="Water Quality Data" FontSize="32" HorizontalOptions="Center" />
+            <Label Text="Select a date and time range to view water quality data." FontSize="18" HorizontalOptions="Center" />
+
+            <Label Text="Start Date" />
+            <DatePicker Date="{Binding StartDate}"
+                        MinimumDate="2025-02-01"
+                        MaximumDate="2025-02-28" />
+
+            <Label Text="Start Time" />
+            <Picker ItemsSource="{Binding HourOptions}"
+                    SelectedItem="{Binding StartTime}"
+                    ItemDisplayBinding="{Binding}" />
+
+            <Label Text="End Date" />
+            <DatePicker Date="{Binding EndDate}"
+                        MinimumDate="2025-02-01"
+                        MaximumDate="2025-02-28" />
+
+            <Label Text="End Time" />
+            <Picker ItemsSource="{Binding HourOptions}"
+                    SelectedItem="{Binding EndTime}"
+                    ItemDisplayBinding="{Binding}" />
+
+            <Button Text="Load Range Readings" Command="{Binding LoadDataCommand}" />
+
+
+            <Grid ColumnSpacing="10" Padding="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Date" Grid.Column="0" FontAttributes="Bold" />
+                <Label Text="Time" Grid.Column="1" FontAttributes="Bold" />
+                <Label Text="Nitrate (mg l-1)" Grid.Column="2" FontAttributes="Bold" />
+                <Label Text="Nitrite (mg l-1)" Grid.Column="3" FontAttributes="Bold" />
+                <Label Text="Phosphate (mg l-1)" Grid.Column="4" FontAttributes="Bold" />
+                <Label Text="EC (cfu/100ml)" Grid.Column="5" FontAttributes="Bold" />
+            </Grid>
+
+
+            <CollectionView ItemsSource="{Binding Readings}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10" ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding Date}" Grid.Column="0" />
+                            <Label Text="{Binding Time}" Grid.Column="1" />
+                            <Label Text="{Binding Nitrate, StringFormat='{0:F2}'}" Grid.Column="2" />
+                            <Label Text="{Binding Nitrite, StringFormat='{0:F2}'}" Grid.Column="3" />
+                            <Label Text="{Binding Phosphate, StringFormat='{0:F2}'}" Grid.Column="4" />
+                            <Label Text="{Binding EColi, StringFormat='{0:F2}'}" Grid.Column="5" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

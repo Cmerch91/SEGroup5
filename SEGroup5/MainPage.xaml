@@ -6,6 +6,14 @@
     <ScrollView>
 <VerticalStackLayout Padding="20" Spacing="20">
 
+<Label 
+    Text="Software Engineering Group 5" 
+    FontSize="32" 
+    HorizontalOptions="Center" />
+    <Label 
+    Text="Chad Merchant, Andrew Haston and Logan Nuttall" 
+    FontSize="22" 
+    HorizontalOptions="Center" />
 <Button 
     Text="Menu"
     Clicked="OnNavigateToMenuPage"

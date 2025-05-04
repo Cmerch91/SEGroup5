@@ -10,8 +10,8 @@ public partial class Menu : ContentPage
 		InitializeComponent();
 	}
 
-	private async void OnNavigateToReadingsPage(object sender, EventArgs e)
+	private async void OnNavigateToDataMenu(object sender, EventArgs e)
 {
-    await Navigation.PushAsync(new Readings());
+    await Navigation.PushAsync(new DataMenuPage());
 }
 }
