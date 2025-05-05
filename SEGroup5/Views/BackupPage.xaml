@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SEGroup5.Views.BackupPage">
+    <VerticalStackLayout Padding="20" Spacing="20" VerticalOptions="Center">
+        <Label 
+            Text="Database Backup"
+            FontSize="32"
+            HorizontalOptions="Center" />
+            
+        <Label 
+            Text="Last Backup:"
+            FontSize="18"
+            HorizontalOptions="Center" />
+            
+        <Label 
+            x:Name="LastBackupLabel"
+            Text="No backup history available"
+            FontSize="16"
+            HorizontalOptions="Center" />
+            
+        <Button 
+            Text="Create Backup"
+            Clicked="OnCreateBackupClicked"
+            HorizontalOptions="Center"
+            WidthRequest="200" />
+    </VerticalStackLayout>
+</ContentPage>
