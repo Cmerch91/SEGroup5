@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SEGroup5.Views.TrendReportPage">
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Label 
+            Text="Environmental Trend Reports"
+            FontSize="32"
+            HorizontalOptions="Center" />
+            
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+            <Button 
+                Text="Air Quality"
+                Clicked="OnAirQualityReportClicked"
+                WidthRequest="120" />
+                
+            <Button 
+                Text="Water Quality"
+                Clicked="OnWaterQualityReportClicked"
+                WidthRequest="120" />
+                
+            <Button 
+                Text="Weather"
+                Clicked="OnWeatherReportClicked"
+                WidthRequest="120" />
+        </HorizontalStackLayout>
+        
+        <Label 
+            Text="Report Period:"
+            Margin="0,15,0,0" />
+            
+        <Picker
+            x:Name="PeriodPicker"
+            HorizontalOptions="Fill">
+            <Picker.Items>
+                <x:String>Last 24 Hours</x:String>
+                <x:String>Last 7 Days</x:String>
+                <x:String>Last 30 Days</x:String>
+            </Picker.Items>
+            <Picker.SelectedIndex>0</Picker.SelectedIndex>
+        </Picker>
+        
+        <Frame BorderColor="LightGray" Padding="10" Margin="0,10,0,0">
+            <VerticalStackLayout Spacing="10">
+                <Label 
+                    Text="Trend Summary"
+                    FontSize="20"
+                    FontAttributes="Bold" />
+                    
+                <ScrollView HeightRequest="300">
+                    <Label 
+                        x:Name="ReportTextLabel"
+                        Text="Select a type and period above to generate a trend report."
+                        TextType="Text" />
+                </ScrollView>
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>
