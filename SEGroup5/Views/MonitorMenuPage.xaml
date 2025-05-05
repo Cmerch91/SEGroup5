@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SEGroup5.Views.MonitorMenuPage">
+
+    <VerticalStackLayout>
+                <StackLayout Padding="20" Spacing="15">
+
+        <Label 
+            Text="Monitor Menu" 
+            FontSize="32" 
+            HorizontalOptions="Center" />
+        <Label 
+            Text="Select which Sensor you would like to Monitor"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Button 
+            Text="Air Sensor"
+            Clicked="OnNavigateToAirMonitorPage" />
+        <Button 
+            Text="Water Sensor"
+            Clicked="OnNavigateToWaterMonitorPage" />
+        <Button 
+            Text="Weather Sensor"
+            Clicked="OnNavigateToWeatherMonitorPage" />
+
+            </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

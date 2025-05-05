@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SEGroup5.Views.WaterMonitorPage">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+
+            <Label Text="Water Sensor Monitor" FontSize="28" HorizontalOptions="Center" />
+
+            <Label Text="{Binding Name}" FontSize="20" FontAttributes="Bold" />
+
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="Status: " FontAttributes="Bold" />
+                <Label Text="{Binding Status}" />
+            </HorizontalStackLayout>
+
+            <CollectionView ItemsSource="{Binding Readings}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Spacing="5" Padding="0,10">
+                            <Label Text="{Binding Quantity}" FontAttributes="Bold" />
+
+                            <HorizontalStackLayout>
+                                <Label Text="Unit: " FontAttributes="Bold" />
+                                <Label Text="{Binding Unit}" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout>
+                                <Label Text="Frequency: " FontAttributes="Bold" />
+                                <Label Text="{Binding Frequency}" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout>
+                                <Label Text="Safe Level: " FontAttributes="Bold" />
+                                <Label Text="{Binding SafeLevel}" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

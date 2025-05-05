@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SEGroup5.Menu">
-    <VerticalStackLayout>
+    <VerticalStackLayout Padding="20" Spacing="20">
         <Label 
             Text="Menu" 
             FontSize="32" 
@@ -10,6 +10,10 @@
         <Button 
             Text="Display Data"
             Clicked="OnNavigateToDataMenu"
+        />
+        <Button 
+            Text="Monitor Menu"
+            Clicked="OnNavigateToMonitorPage"
         />
     </VerticalStackLayout>
 </ContentPage>
