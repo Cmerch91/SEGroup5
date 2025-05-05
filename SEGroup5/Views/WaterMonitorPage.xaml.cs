@@ -9,4 +9,8 @@ public partial class WaterMonitorPage : ContentPage
         InitializeComponent();
         BindingContext = SensorData.Sensors.Water;
     }
+    private async void OnBackClicked(object sender, EventArgs e)
+    {
+        await Navigation.PopAsync();
+    }
 }

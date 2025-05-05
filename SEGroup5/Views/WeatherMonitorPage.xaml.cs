@@ -9,4 +9,8 @@ public partial class WeatherMonitorPage : ContentPage
         InitializeComponent();
         BindingContext = SensorData.Sensors.Weather;
     }
+    private async void OnBackClicked(object sender, EventArgs e)
+    {
+        await Navigation.PopAsync();
+    }
 }

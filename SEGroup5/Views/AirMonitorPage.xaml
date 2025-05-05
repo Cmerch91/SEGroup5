@@ -3,6 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SEGroup5.Views.AirMonitorPage">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Back"
+                     Priority="0"
+                     Order="Primary"
+                     Clicked="OnBackClicked" />
+    </ContentPage.ToolbarItems>
+
     <ScrollView>
         <StackLayout Padding="20" Spacing="20">
 

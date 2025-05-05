@@ -12,5 +12,10 @@ namespace SEGroup5.Views
             InitializeComponent();
             BindingContext = new AirQualityViewModel(); 
         }
+        private async void OnBackClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+
     }
 }

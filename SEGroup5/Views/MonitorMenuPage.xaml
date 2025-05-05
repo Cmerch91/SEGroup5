@@ -3,27 +3,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SEGroup5.Views.MonitorMenuPage">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Back"
+                     Priority="0"
+                     Order="Primary"
+                     Clicked="OnBackClicked" />
+    </ContentPage.ToolbarItems>
+
     <VerticalStackLayout>
-                <StackLayout Padding="20" Spacing="15">
+        <StackLayout Padding="20" Spacing="15">
 
-        <Label 
-            Text="Monitor Menu" 
-            FontSize="32" 
-            HorizontalOptions="Center" />
-        <Label 
-            Text="Select which Sensor you would like to Monitor"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Button 
-            Text="Air Sensor"
-            Clicked="OnNavigateToAirMonitorPage" />
-        <Button 
-            Text="Water Sensor"
-            Clicked="OnNavigateToWaterMonitorPage" />
-        <Button 
-            Text="Weather Sensor"
-            Clicked="OnNavigateToWeatherMonitorPage" />
+            <Label 
+                Text="Monitor Menu" 
+                FontSize="32" 
+                HorizontalOptions="Center" />
+            <Label 
+                Text="Monitor Sensor"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
 
-            </StackLayout>
+            <Button Text="Air Sensor" Clicked="OnNavigateToAirMonitorPage" />
+            <Button Text="Water Sensor" Clicked="OnNavigateToWaterMonitorPage" />
+            <Button Text="Weather Sensor" Clicked="OnNavigateToWeatherMonitorPage" />
+
+            <Label 
+                Text="Configure Sensor Settings"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                Margin="0,20,0,0" />
+
+            <Button Text="Configure Air Sensor" Clicked="OnNavigateToAirConfigPage" />
+            <Button Text="Configure Water Sensor" Clicked="OnNavigateToWaterConfigPage" />
+            <Button Text="Configure Weather Sensor" Clicked="OnNavigateToWeatherConfigPage" />
+
+        </StackLayout>
     </VerticalStackLayout>
 </ContentPage>

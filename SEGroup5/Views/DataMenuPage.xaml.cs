@@ -8,14 +8,18 @@ public partial class DataMenuPage : ContentPage
 	}
 	private async void OnNavigateToAirQualityPage(object sender, EventArgs e)
 	{
-    await Navigation.PushAsync(new AirQualityPage());
+    	await Navigation.PushAsync(new AirQualityPage());
 	}
 		private async void OnNavigateToWaterQualityPage(object sender, EventArgs e)
 	{
-    await Navigation.PushAsync(new WaterQualityPage());
+    	await Navigation.PushAsync(new WaterQualityPage());
 	}
 	private async void OnNavigateToWeatherPage(object sender, EventArgs e)
 	{
-    await Navigation.PushAsync(new WeatherPage());
+    	await Navigation.PushAsync(new WeatherPage());
+	}
+	private async void OnBackClicked(object sender, EventArgs e)
+	{
+    	await Navigation.PopAsync();
 	}
 }

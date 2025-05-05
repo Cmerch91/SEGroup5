@@ -12,5 +12,9 @@ namespace SEGroup5.Views
             InitializeComponent();
             BindingContext = new WaterQualityViewModel();
         }
+        private async void OnBackClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
     }
 }

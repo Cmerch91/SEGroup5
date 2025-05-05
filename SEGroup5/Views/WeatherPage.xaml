@@ -4,6 +4,13 @@
              xmlns:viewmodels="clr-namespace:SEGroup5.ViewModels"
              x:Class="SEGroup5.Views.WeatherPage">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Back"
+                     Priority="0"
+                     Order="Primary"
+                     Clicked="OnBackClicked" />
+    </ContentPage.ToolbarItems>
+
     <ContentPage.BindingContext>
         <viewmodels:WeatherViewModel />
     </ContentPage.BindingContext>

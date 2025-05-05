@@ -2,6 +2,14 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SEGroup5.Views.DataMenuPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Back"
+                     Priority="0"
+                     Order="Primary"
+                     Clicked="OnBackClicked" />
+    </ContentPage.ToolbarItems>
+    
     <VerticalStackLayout>
                 <StackLayout Padding="20" Spacing="15">
 

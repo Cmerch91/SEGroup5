@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SEGroup5.Views.WaterMonitorPage">
+             x:Class="SEGroup5.Views.ConfigWaterSensorPage">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Back"
@@ -13,39 +13,36 @@
     <ScrollView>
         <StackLayout Padding="20" Spacing="20">
 
-            <Label Text="Water Sensor Monitor" FontSize="28" HorizontalOptions="Center" />
+            <Label Text="Edit Water Sensor" FontSize="28" HorizontalOptions="Center" />
 
-            <Label Text="{Binding Name}" FontSize="20" FontAttributes="Bold" />
-
-            <HorizontalStackLayout Spacing="10">
-                <Label Text="Status: " FontAttributes="Bold" />
-                <Label Text="{Binding Status}" />
+            <HorizontalStackLayout>
+                <Label Text="Status:" FontAttributes="Bold" />
+                <Picker ItemsSource="{Binding StatusOptions}" SelectedItem="{Binding Status}" />
             </HorizontalStackLayout>
 
             <CollectionView ItemsSource="{Binding Readings}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <VerticalStackLayout Spacing="5" Padding="0,10">
+                        <VerticalStackLayout Spacing="8" Padding="0,10">
+
                             <Label Text="{Binding Quantity}" FontAttributes="Bold" />
 
                             <HorizontalStackLayout>
-                                <Label Text="Unit: " FontAttributes="Bold" />
-                                <Label Text="{Binding Unit}" />
+                                <Label Text="Frequency:" WidthRequest="100" />
+                                <Picker ItemsSource="{Binding FrequencyOptions}" SelectedItem="{Binding Frequency}" />
                             </HorizontalStackLayout>
 
                             <HorizontalStackLayout>
-                                <Label Text="Frequency: " FontAttributes="Bold" />
-                                <Label Text="{Binding Frequency}" />
+                                <Label Text="Safe Level:" WidthRequest="100" />
+                                <Entry Text="{Binding SafeLevel}" Keyboard="Numeric" />
                             </HorizontalStackLayout>
 
-                            <HorizontalStackLayout>
-                                <Label Text="Safe Level: " FontAttributes="Bold" />
-                                <Label Text="{Binding SafeLevel}" />
-                            </HorizontalStackLayout>
                         </VerticalStackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+
+            <Button Text="Update" Command="{Binding UpdateCommand}" />
 
         </StackLayout>
     </ScrollView>

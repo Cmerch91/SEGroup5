@@ -10,4 +10,8 @@ public partial class AirMonitorPage : ContentPage
         InitializeComponent();
         BindingContext = SensorData.Sensors.Air;
     }
+    private async void OnBackClicked(object sender, EventArgs e)
+    {
+        await Navigation.PopAsync();
+    }
 }

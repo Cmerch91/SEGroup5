@@ -10,7 +10,12 @@ public partial class WeatherPage : ContentPage
 	// This allows the page to bind to properties and commands defined in the ViewModel
 	public WeatherPage()
 	{
-            InitializeComponent();
-            BindingContext = new WeatherViewModel();
+        InitializeComponent();
+        BindingContext = new WeatherViewModel();
 	}
+	private async void OnBackClicked(object sender, EventArgs e)
+	{
+    await Navigation.PopAsync();
+	}
+
 }
