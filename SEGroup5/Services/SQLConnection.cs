@@ -1,4 +1,5 @@
 using Microsoft.Data.SqlClient;
+using SEGroup5.Models;
 
 public class SQLConnection
 {
@@ -103,4 +104,42 @@ public class SQLConnection
 
         return found;
     }
+
+    public async Task UpdateRole(Role role, string newName)
+    {
+
+        using var connection = new SqlConnection(_connectionString);
+        await connection.OpenAsync();
+        /*
+        SqlCommand command;
+
+        if(startingName == ""){
+
+            command = new SqlCommand(@"
+                INSERT INTO Roles VALUES ('" + startingName + "');", connection);
+
+        }
+        else{
+
+            command = new SqlCommand(@"
+                UPDATE Roles SET RoleName = '" + role.RoleName + "' WHERE RoleName='" + startingName + "';", connection);
+
+        }
+
+        using var reader = await command.ExecuteReaderAsync();
+        */
+    }
+
+    public async Task DeleteRole(Role role)
+    {
+
+        using var connection = new SqlConnection(_connectionString);
+        await connection.OpenAsync();
+
+        var command = new SqlCommand(@"
+            DELETE Roles WHERE RoleName='" + role.RoleName + "';", connection);
+
+        using var reader = await command.ExecuteReaderAsync();
+    }
+
 }

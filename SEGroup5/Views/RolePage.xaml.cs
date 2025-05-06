@@ -10,7 +10,6 @@ namespace SEGroup5.Views
         public RolePage()
         {
             InitializeComponent();
-            BindingContext = new RolePageViewModel();
         }
 
         private async void OnNavigateBack(object sender, EventArgs e)

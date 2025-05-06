@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:SEGroup5.ViewModels"
-             x:Class="SEGroup5.Views.RolesPage">
+             x:Class="SEGroup5.Views.RolesPage"
+             NavigatedTo="ContentPage_NavigatedTo">
 
     <ContentPage.BindingContext>
         <viewmodels:RolesPageViewModel />
@@ -12,6 +13,8 @@
         <ToolbarItem Text="Add"
                 Command="{Binding AddRoleCommand}"
                 IconImageSource="{FontImage Glyph='+', Color=Black, Size=22}"/>
+        <ToolbarItem Text="Load Roles"
+                Command="{Binding LoadRolesCommand}"/>
     </ContentPage.ToolbarItems>
 
     <ScrollView>
@@ -20,8 +23,6 @@
             <Label Text="Roles:" FontSize="32" HorizontalOptions="Center" />
             <Label Text="Roles:" FontSize="18" HorizontalOptions="Center" />
 
-            <Button Text="Load Roles" Command="{Binding LoadRolesCommand}" />
-
             <Grid ColumnSpacing="10" Padding="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -29,7 +30,10 @@
                 <Label Text="RoleName" Grid.Column="0" FontAttributes="Bold" />
             </Grid>
 
-            <CollectionView ItemsSource="{Binding Roles}">
+            <CollectionView x:Name ="rolesCollection"
+                ItemsSource="{Binding Roles}"
+                SelectionMode="Single"
+                SelectionChangedCommand="{Binding SelectRoleCommand}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="10" ColumnSpacing="10">

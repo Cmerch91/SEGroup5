@@ -13,6 +13,11 @@ namespace SEGroup5.Views
             BindingContext = new RolesPageViewModel();
         }
 
+        private void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e)
+	{
+		rolesCollection.SelectedItem = null;
+	}
+
         private async void OnNavigateBack(object sender, EventArgs e)
         {
         await Navigation.PushAsync(new Admin());
