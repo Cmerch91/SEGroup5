@@ -1,3 +1,5 @@
+using System.Collections.ObjectModel;
+using SEGroup5.Models;
 using SEGroup5.ViewModels;
 
 namespace SEGroup5.Views
@@ -12,6 +14,11 @@ namespace SEGroup5.Views
             InitializeComponent();
             BindingContext = new UsersPageViewModel();
         }
+
+        private void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e)
+	    {
+		usersCollection.SelectedItem = null;
+	    }
 
         private async void OnNavigateBack(object sender, EventArgs e)
         {

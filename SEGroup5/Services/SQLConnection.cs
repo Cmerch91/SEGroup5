@@ -57,9 +57,9 @@ public class SQLConnection
 
     }
 
-    public async Task<List<string>> GetAllFromUsers(){
+    public async Task<List<User>> GetAllFromUsers(){
 
-        var results = new List<string>();
+        var results = new List<User>();
 
         using var connection = new SqlConnection(_connectionString);
         await connection.OpenAsync();
@@ -70,14 +70,15 @@ public class SQLConnection
         using var reader = await command.ExecuteReaderAsync();
         while (await reader.ReadAsync())
         {
-            var id = reader[0].ToString();
-            var role = reader[1].ToString();
-            var firstname = reader[2].ToString();
-            var lastname = reader[3].ToString();
-            var email = reader[4].ToString();
-            var password = reader[5].ToString();
+            User user = new User();
+            user.UserID = reader[0].ToString();
+            user.UserRole = reader[1].ToString();
+            user.Firstname = reader[2].ToString();
+            user.Lastname = reader[3].ToString();
+            user.Email = reader[4].ToString();
+            user.Password = reader[5].ToString();
 
-            results.Add($"{id}, {role}, {firstname}, {lastname}, {email}, {password}");
+            results.Add(user);
         }
 
         return results;

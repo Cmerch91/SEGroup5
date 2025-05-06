@@ -2,19 +2,27 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:SEGroup5.ViewModels"
-             x:Class="SEGroup5.Views.UsersPage">
+             x:Class="SEGroup5.Views.UsersPage"
+             NavigatedTo="ContentPage_NavigatedTo"
+             Title="Users">
 
     <ContentPage.BindingContext>
         <viewmodels:UsersPageViewModel />
     </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add User"
+                Command="{Binding AddUserCommand}"
+                IconImageSource="{FontImage Glyph='+', Color=Black, Size=22}"/>
+        <ToolbarItem Text="Load Users"
+                Command="{Binding LoadUsersCommand}"/>
+    </ContentPage.ToolbarItems>
 
     <ScrollView>
         <StackLayout Padding="20" Spacing="15">
 
             <Label Text="Roles:" FontSize="32" HorizontalOptions="Center" />
             <Label Text="Roles:" FontSize="18" HorizontalOptions="Center" />
-
-            <Button Text="Load Users" Command="{Binding LoadUsersCommand}" />
 
             <Grid ColumnSpacing="10" Padding="10">
                 <Grid.ColumnDefinitions>
@@ -33,15 +41,28 @@
                 <Label Text="Password" Grid.Column="5" FontAttributes="Bold" />
             </Grid>
 
-            <CollectionView ItemsSource="{Binding Users}">
+            <CollectionView ItemsSource="{Binding Users}"
+            x:Name="usersCollection"
+            SelectionMode="Single"
+            SelectionChangedCommand="{Binding SelectUserCommand}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="10" ColumnSpacing="100">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
-                            <Label Text="{Binding}" Grid.Column="0" />
+                            <Label Text="{Binding UserID}" Grid.Column="0" />
+                            <Label Text="{Binding UserRole}" Grid.Column="1" />
+                            <Label Text="{Binding Firstname}" Grid.Column="2" />
+                            <Label Text="{Binding Lastname}" Grid.Column="3" />
+                            <Label Text="{Binding Email}" Grid.Column="4" />
+                            <Label Text="{Binding Password}" Grid.Column="5" />
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

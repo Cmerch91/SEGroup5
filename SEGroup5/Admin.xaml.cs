@@ -11,7 +11,7 @@ public partial class Admin : ContentPage
 
 	private async void OnNavigateToRolesPage(object sender, EventArgs e)
 {
-    await Navigation.PushAsync(new RolePage());
+    await Navigation.PushAsync(new RolesPage());
 }
 
 private async void OnNavigateToUsersPage(object sender, EventArgs e)

@@ -25,13 +25,13 @@ public class RolesPageViewModel : INotifyPropertyChanged
         await Shell.Current.GoToAsync(nameof(Views.RolePage)); 
     }
 
-    private async Task SelectRoleAsync(ViewModels.RolePageViewModel role)
+    private async Task SelectRoleAsync()
     {
-        if (role != null){
+        //if (role != null){
 
-            await Shell.Current.GoToAsync($"{nameof(Views.NotePage)}?load={role.Identifier}");
+            //await Shell.Current.GoToAsync($"{nameof(Views.NotePage)}?load={role.Identifier}");
 
-        }
+        //}
             
     }
 

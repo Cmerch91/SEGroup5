@@ -33,7 +33,7 @@
             <CollectionView x:Name ="rolesCollection"
                 ItemsSource="{Binding Roles}"
                 SelectionMode="Single"
-                SelectionChangedCommand="{Binding SelectRoleCommand}">
+                SelectionChangedCommand="{Binding Path=BindingContext.TapCommand, Source = {x:Reference rolesCollection}}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="10" ColumnSpacing="10">

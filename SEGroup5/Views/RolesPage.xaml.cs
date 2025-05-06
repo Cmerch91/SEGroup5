@@ -10,7 +10,6 @@ namespace SEGroup5.Views
         public RolesPage()
         {
             InitializeComponent();
-            BindingContext = new RolesPageViewModel();
         }
 
         private void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e)

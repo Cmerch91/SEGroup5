@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:SEGroup5.ViewModels"
+             x:Class="SEGroup5.Views.UserPage"
+             Title="User">
+        <ContentPage.BindingContext>
+                <viewModels:UserPageViewModel/>
+        </ContentPage.BindingContext>
+
+        <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save User"
+                Command="{Binding SaveUserCommand}"
+                IconImageSource="{FontImage Glyph='+', Color=Black, Size=22}"/>
+        <ToolbarItem Text="Delete User"
+                Command="{Binding DeleteUserCommand}"/>
+    </ContentPage.ToolbarItems>
+
+        <VerticalStackLayout Spacing="10"
+                        Margin="5">
+                <Editor x:Name="idText"
+                        Placeholder="Enter user id"
+                        Text="{Binding UserID}"
+                        HeightRequest="100"/>
+                <Editor x:Name="roleText"
+                        Placeholder="Enter user role"
+                        Text="{Binding UserRole}"
+                        HeightRequest="100"/>
+                <Editor x:Name="firstnameText"
+                        Placeholder="Enter firstname"
+                        Text="{Binding FirstName}"
+                        HeightRequest="100"/>
+                <Editor x:Name="lastnameText"
+                        Placeholder="Enter lastname"
+                        Text="{Binding LastName}"
+                        HeightRequest="100"/>
+                <Editor x:Name="emailText"
+                        Placeholder="Enter email"
+                        Text="{Binding Email}"
+                        HeightRequest="100"/>
+                <Editor x:Name="passwordText"
+                        Placeholder="Enter password"
+                        Text="{Binding Password}"
+                        HeightRequest="100"/>
+        </VerticalStackLayout>
+</ContentPage>
